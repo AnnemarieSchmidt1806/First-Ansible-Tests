@@ -11,3 +11,6 @@
     - aliases
     - tools
     - geerlingguy.firewall
+    - geerlingguy.docker
+    - snipeit_docker
+    - permissions

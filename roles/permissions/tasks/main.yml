@@ -1,0 +1,7 @@
+---
+- name: give writing permissions to data/logs
+  file:
+    path: /opt/docker/snipeit/data/logs/
+    recurse: yes
+    mode: 0777
+    state: directory

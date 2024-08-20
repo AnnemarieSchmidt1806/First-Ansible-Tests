@@ -1,0 +1,13 @@
+---
+- hosts: orb #Variable
+  remote_user: dirk
+  become: true
+  vars:
+    ansible_port: "{{ ssh_port | default('22') }}"
+  roles:
+    - hostnames
+    - users
+    - ssh
+    - aliases
+    - tools
+    - geerlingguy.firewall

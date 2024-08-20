@@ -1,0 +1,14 @@
+---
+- name: Set hostname
+  become: true
+  hostname:
+    name: "{{ inventory_hostname }}" # Variable aus hosts-Datei
+
+- name: Copy "hosts" file
+  become: true
+  copy:
+    src: hosts
+    dest: /etc/hosts
+    owner: root
+    group: root
+    mode: 0644

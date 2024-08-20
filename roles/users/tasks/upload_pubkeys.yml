@@ -1,0 +1,36 @@
+---  
+- name: Create root user's .ssh directory
+  become: true
+  file:
+    path: /root/.ssh
+    state: directory
+    owner: root
+    group: root
+    mode: 0700
+
+- name: Copy root user's authorized_keys
+  become: true
+  copy: 
+    src: authorized_keys_root
+    dest: /root/.ssh/authorized_keys
+    owner: root
+    group: root
+    mode: 0600
+
+- name: Create "dirk" user's .ssh directory
+  become: true
+  file:
+    path: /home/dirk/.ssh
+    state: directory
+    owner: root
+    group: root
+    mode: 0700
+
+- name: Copy "dirk" user's authorized_keys
+  become: true
+  copy: 
+    src: authorized_keys_dirk
+    dest: /home/dirk/.ssh/authorized_keys
+    owner: dirk
+    group: users
+    mode: 0600

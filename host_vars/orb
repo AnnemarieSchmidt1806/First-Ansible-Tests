@@ -1,0 +1,15 @@
+---
+#install_images:
+#    path:
+#    raid: 
+#    image:
+#     drives:
+
+passwordless_sudo: true
+
+ssh_port: 32222
+
+firewall_allowed_tcp_ports:
+  - 80
+  - 443
+  - 32222

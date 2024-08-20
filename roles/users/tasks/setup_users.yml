@@ -1,0 +1,25 @@
+---
+- name: Create "dirk" user
+  become: true
+  user:
+    name: dirk
+    shell: /bin/bash
+    uid: 1000
+    group: users
+    groups: sudo
+    append: true
+    password: $2y$10$4Omgig9uvnO1SymF2UaswuD/vrOL9X7u2c0TV4nKyWxADPB7DQfiW
+
+- name: Add user "dirk" to "sudo-nopasswd" group
+  become: true
+  user:
+    name: dirk
+    groups: sudo-nopasswd
+    append: true
+  when: passwordless_sudo is defined and passwordless_sudo == true
+
+- name: Remove user "dirk" from "sudo-nopasswd" group
+  become: true
+  shell: /usr/sbin/delgroup dirk sudo-nopasswd
+  when: not (passwordless_sudo is defined and passwordless_sudo == true)
+  ignore_errors: true # damit keine Fehler kommen, falls dirk gar nicht in der Gruppe ist

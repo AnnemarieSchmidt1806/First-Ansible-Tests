@@ -13,8 +13,7 @@ services:
     environment:
       APP_ENV: production # development
       APP_DEBUG: false
-      # APP_KEY: "{{ snipeit_docker.APP_KEY }}"
-      APP_KEY: base64:D5OgxQwbSboEfxrNq7o261heHAStV/PG2pA3YhkyNYk=
+      APP_KEY: "{{ snipeit_docker.APP_KEY }}"
       APP_URL: http://ubuntu.orb.local:8080
       # APP_TIMEZONE=DE/Berlin
       APP_LOCALE: en-GB

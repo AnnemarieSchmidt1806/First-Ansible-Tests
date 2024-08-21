@@ -12,5 +12,7 @@
     - tools
     - geerlingguy.firewall
     - geerlingguy.docker
+    - env_file
     - snipeit_docker
     - permissions
+ 

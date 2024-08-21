@@ -1,0 +1,8 @@
+---
+- name: Copy .env file
+  template:
+    src: .env
+    dest: /opt/docker/snipeit/
+    owner: root
+    group: root
+    mode: 0644

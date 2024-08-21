@@ -1,5 +1,4 @@
 services:
-
   app:
     image: snipe/snipe-it:latest
     depends_on:
@@ -7,32 +6,19 @@ services:
     volumes:
     - ./data/app:/var/lib/snipeit
     - ./data/logs:/var/www/html/storage/logs
+    env_file:
+      - .env
     ports:
       - "8080:80"
-    restart: unless-stopped
-    environment:
-      APP_ENV: production # development
-      APP_DEBUG: false
-      APP_KEY: "{{ snipeit_docker.APP_KEY }}"
-      APP_URL: http://ubuntu.orb.local:8080
-      # APP_TIMEZONE=DE/Berlin
-      APP_LOCALE: en-GB
-        
-      # Docker-specific variables
-      PHP_UPLOAD_LIMIT: 100
+    restart: unless-stopped  
 
   db:
     image: "mariadb:{{ snipeit_docker.mariadb_version }}"
     volumes:
     - ./data/db:/var/lib/mysql
+    env_file:
+    - .env
     restart: unless-stopped
-    environment:
-      MYSQL_PORT_3306_TCP_ADDR: db
-      MYSQL_PORT_3306_TCP_PORT: 3306
-      MYSQL_ROOT_PASSWORD: "{{ snipeit_docker.MYSQL_ROOT_PASSWORD}}"
-      MYSQL_DATABASE: snipeit
-      MYSQL_USER: snipeit
-      MYSQL_PASSWORD: "{{ snipeit_docker.MYSQL_PASSWORD }}"
 
   mailhog:
     image: mailhog/mailhog
@@ -41,19 +27,6 @@ services:
     volumes:
       - ./data/mailhog:/var/mailhog
     restart: unless-stopped
-    environment:
-      MAIL_PORT_587_TCP_ADDR: mailhog
-      MAIL_MAILER: smtp
-      MAIL_HOST: mailhog
-      MAIL_PORT: 1025
-      MAIL_USERNAME: null
-      MAIL_PASSWORD: null
-      MAIL_TLS_VERIFY_PEER: true
-      MAIL_FROM_ADDR: alademann@thinkport.digital
-      MAIL_FROM_NAME: 'Thinkport Inventory'
-      MAIL_REPLYTO_ADDR: alademann@thinkport.digital
-      MAIL_REPLYTO_NAME: 'Thinkport Inventory'
-      MAIL_AUTO_EMBED_METHOD: 'attachment'
 
 volumes:  
   db_data:

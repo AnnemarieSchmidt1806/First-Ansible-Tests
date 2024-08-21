@@ -1,6 +1,6 @@
 services:
   app:
-    image: snipe/snipe-it:latest
+    image: snipe/snipe-it:{{ snipeit_docker.snipeit_version }}
     depends_on:
     - db
     volumes:

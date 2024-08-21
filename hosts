@@ -1,1 +1,3 @@
-orb ansible_user=ubuntu
+root@ubuntu@orb ansible_user=root@ubuntu
+zweitevm@orb ansible_user=zweitevm
+drittevm@orb ansible_user=drittevm

@@ -1,11 +1,13 @@
 ---
-- hosts: orb #Variable
+- hosts: "{{ target }}" #Variable
   remote_user: dirk
   become: true
   vars:
     ansible_port: "{{ ssh_port | default('22') }}"
+  vars_files:
+    - host_vars/orb
+    - host_vars/encrypted_vars
   roles:
-    - hostnames
     - users
     - ssh
     - aliases

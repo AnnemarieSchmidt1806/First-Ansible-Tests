@@ -1,6 +1,7 @@
 ---
 - hosts: "{{ target }}" #Variable
   gather_facts: false
-  remote_user: root
+  remote_user: default
+  port: 32222
   roles:
     - install_python

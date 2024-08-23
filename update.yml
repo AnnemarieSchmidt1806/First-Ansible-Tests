@@ -1,0 +1,15 @@
+---
+- hosts: "{{ target }}" #Variable
+  remote_user: default
+  become: true
+  vars:
+    ansible_port: "{{ ssh_port | default('22') }}"
+  vars_files:
+    - host_vars/orb
+    - host_vars/encrypted_vars
+  roles:
+    - apt_upgrade
+    - env_file
+    - snipeit_docker
+
+ 

@@ -1,5 +1,5 @@
 ---
-- hosts: "{{ target }}" #Variable
+- hosts: "{{ target }}" # Variable
   gather_facts: false
   remote_user: default
   port: 32222

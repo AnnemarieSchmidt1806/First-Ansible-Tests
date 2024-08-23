@@ -5,12 +5,10 @@ ssh_port: 32222
 
 firewall_allowed_tcp_ports:
   - 80
-  - 443
   - 32222
   - 8080
 
 docker_package: docker-ce=5:27.1.2-1~ubuntu.24.04~noble
 docker_compose_version: 2.29.1
-docker_users: 
-  - dirk 
+
 

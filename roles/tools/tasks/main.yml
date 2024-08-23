@@ -1,8 +1,0 @@
----
-- name: Install Midnight Commander, NTP daemon
-  apt: 
-    name:
-      - mc
-      - ntp
-    cache_valid_time: 3600 # wenn ein apt update länger als eine Stunde her ist, wird es ausgeführt
-    

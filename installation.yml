@@ -1,0 +1,16 @@
+---
+- hosts: "{{ target }}" #Variable
+  remote_user: snipeit
+  become: true
+  vars:
+    ansible_port: "{{ ssh_port | default('22') }}"
+  vars_files:
+    - host_vars/orb
+    - host_vars/encrypted_vars
+  roles:
+    - geerlingguy.firewall
+    - geerlingguy.docker
+    - env_file
+    - snipeit_docker
+    - permissions
+ 

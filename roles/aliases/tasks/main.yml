@@ -1,9 +1,0 @@
----
-- name: Copy dirk's .bash_aliases
-  become: true
-  copy:
-    src: .bash_aliases
-    dest: /home/dirk/
-    owner: dirk
-    group: users
-    mode: 0644

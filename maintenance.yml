@@ -1,6 +1,6 @@
 ---
 - hosts: "{{ target }}" #Variable
-  remote_user: default
+  remote_user: snipeit
   become: true
   vars:
     ansible_port: "{{ ssh_port | default('22') }}"

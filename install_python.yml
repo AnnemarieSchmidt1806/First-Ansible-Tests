@@ -1,7 +1,8 @@
 ---
 - hosts: "{{ target }}" # Variable
   gather_facts: false
-  remote_user: default
-  port: 32222
+  remote_user: snipeit
+  vars:
+    ansible_port: 22
   roles:
     - install_python

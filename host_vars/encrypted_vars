@@ -4,4 +4,4 @@ snipeit_docker:
   MYSQL_ROOT_PASSWORD: changeme
   MYSQL_PASSWORD: changeme
   APP_KEY: base64:D5OgxQwbSboEfxrNq7o261heHAStV/PG2pA3YhkyNYk=
-  APP_URL: http://ubuntu.orb.local:8080
+  APP_URL: https://afd-endpoint-prod-gwc-ghaqgvhscrd4g3f5.z01.azurefd.net

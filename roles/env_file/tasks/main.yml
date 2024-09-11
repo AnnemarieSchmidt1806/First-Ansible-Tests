@@ -3,6 +3,6 @@
   template:
     src: .env
     dest: /opt/docker/snipeit/
-    owner: root
-    group: root
+    owner: snipeit
+    group: snipeit
     mode: 0644

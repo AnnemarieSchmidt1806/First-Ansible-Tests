@@ -1,5 +1,5 @@
 ---
-- hosts: "{{ target }}" # Variable
+- hosts: all
   gather_facts: false
   remote_user: snipeit
   vars:

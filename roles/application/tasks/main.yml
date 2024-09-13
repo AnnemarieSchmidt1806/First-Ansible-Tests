@@ -1,0 +1,4 @@
+---
+- import_tasks: env_file.yml
+- import_tasks: snipeit_docker.yml
+- import_tasks: permissions.yml

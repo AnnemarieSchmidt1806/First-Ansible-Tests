@@ -1,0 +1,7 @@
+---
+passwordless_sudo: true
+
+firewall_allowed_tcp_ports:
+  - 80
+  - 22
+  - 443

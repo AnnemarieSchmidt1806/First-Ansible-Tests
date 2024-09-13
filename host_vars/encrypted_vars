@@ -5,3 +5,7 @@ snipeit_docker:
   MYSQL_PASSWORD: changeme
   APP_KEY: base64:D5OgxQwbSboEfxrNq7o261heHAStV/PG2pA3YhkyNYk=
   APP_URL: https://afd-endpoint-prod-gwc-ghaqgvhscrd4g3f5.z01.azurefd.net
+
+
+mail_server:
+  MAIL_ENV_PASSWORD: tN~6MD19Irfl2r?

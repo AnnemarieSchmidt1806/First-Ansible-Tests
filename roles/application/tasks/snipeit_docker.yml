@@ -1,12 +1,4 @@
 --- 
-- name: Create docker/snipeit directory
-  file:
-    path: /opt/docker/snipeit
-    state: directory
-    owner: snipeit
-    group: snipeit
-    mode: 0755
-  
 - name: Copy docker-compose file
   template:
     src: docker-compose.yml
@@ -19,3 +11,4 @@
   shell: docker compose up -d
   args:
     chdir: /opt/docker/snipeit/
+

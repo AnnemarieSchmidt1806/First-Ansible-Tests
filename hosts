@@ -1,4 +1,1 @@
-root@ubuntu@orb ansible_user=root@ubuntu
-root@zweitevm@orb ansible_user=root@zweitevm
-root@finaltest@orb ansible_user=root@finaltest
 snipeit@20.170.24.49

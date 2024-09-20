@@ -1,6 +1,11 @@
 ---
 passwordless_sudo: true
 
+snipeit_docker_version:
+  mariadb_version: 11.4.3
+  snipeit_version: v7.0.12
+
+
 firewall_allowed_tcp_ports:
   - 80
   - 22

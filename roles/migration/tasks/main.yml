@@ -1,0 +1,4 @@
+- name: Run database migration
+  shell: docker compose run app php artisan migrate --force
+  args:
+    chdir: /opt/docker/snipeit/

@@ -10,3 +10,4 @@
   roles:
     - apt_upgrade
     - application
+    - migration

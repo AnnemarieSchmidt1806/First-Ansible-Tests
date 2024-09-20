@@ -1,6 +1,6 @@
 services:
   app:
-    image: snipe/snipe-it:{{ snipeit_docker.snipeit_version }}
+    image: snipe/snipe-it:{{ snipeit_docker_version.snipeit_version }}
     depends_on:
     - db
     volumes:
@@ -13,7 +13,7 @@ services:
     restart: unless-stopped  
 
   db:
-    image: "mariadb:{{ snipeit_docker.mariadb_version }}"
+    image: "mariadb:{{ snipeit_docker_version.mariadb_version }}"
     volumes:
     - ./data/db:/var/lib/mysql
     env_file:

@@ -8,6 +8,4 @@
     - host_vars/security_vars
     - host_vars/encrypted_vars
   roles:
-    - apt_upgrade
     - backup
-    - update

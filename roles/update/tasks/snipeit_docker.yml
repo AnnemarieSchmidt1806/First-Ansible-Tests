@@ -1,0 +1,34 @@
+--- 
+- name: Activate Maintainance Mode
+  shell: docker compose exec app bash -c "php artisan down"
+  args:
+    chdir: /opt/docker/snipeit/
+
+- name: Copy docker-compose file
+  template:
+    src: docker-compose.yml
+    dest: /opt/docker/snipeit/
+    owner: snipeit
+    group: snipeit
+    mode: 0644
+
+- name: Run docker-compose pull
+  shell: docker compose pull
+  args:
+    chdir: /opt/docker/snipeit/
+
+- name: Run docker-compose up
+  shell: docker compose up -d
+  args:
+    chdir: /opt/docker/snipeit/
+
+- name: Run database migration
+  shell: docker compose run app php artisan migrate --force
+  args:
+    chdir: /opt/docker/snipeit/
+
+- name: Deactivate Maintainance Mode
+  shell: docker compose exec app bash -c "php artisan up"
+  args:
+    chdir: /opt/docker/snipeit/
+

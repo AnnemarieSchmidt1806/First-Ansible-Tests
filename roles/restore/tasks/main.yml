@@ -1,0 +1,6 @@
+---
+- name: Run SnipeIT Restore
+  shell: docker compose exec app bash -c "php artisan snipeit:restore storage/app/backups/backup.zip --force"
+  args:
+    chdir: /opt/docker/snipeit/
+

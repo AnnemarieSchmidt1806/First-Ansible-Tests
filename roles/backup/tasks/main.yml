@@ -1,0 +1,16 @@
+---
+- name: Delete all Backups
+  shell: rm -f /opt/docker/snipeit/data/app/dumps/* 
+  args:
+    chdir: /opt/docker/snipeit/
+
+- name: Run SnipeIT Backup
+  shell: docker compose exec app bash -c "php artisan snipeit:backup"
+  args:
+    chdir: /opt/docker/snipeit/
+
+
+- name: Rename Backup
+  shell: mv /opt/docker/snipeit/data/app/dumps/* /opt/docker/snipeit/data/app/dumps/backup.zip
+  args:
+    chdir: /opt/docker/snipeit/
